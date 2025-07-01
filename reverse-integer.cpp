@@ -1,17 +1,16 @@
 class Solution {
 public:
-    int reverse(int x) {
-     int rev = 0;
-        while (x != 0) {
-            int pop = x % 10;
-            x /= 10;
-           
-            if (rev > INT_MAX/10 || (rev == INT_MAX/10 && pop > 7))
-                return 0;
-            if (rev < INT_MIN/10 || (rev == INT_MIN/10 && pop < -8))
-                return 0;
-            rev = rev * 10 + pop;
-        }
-        return rev;
+    int reverse(int n) {
+      int reversed_number = 0;
+      while (n!=0)
+      { int h= n%10;
+     
+      if (reversed_number>INT_MAX/10 || reversed_number<INT_MIN/10)
+      {return 0;
+      break;}
+       reversed_number =reversed_number * 10 + h;
+      n=n/10;}
+      return reversed_number; 
     }
+
 };
